@@ -2,96 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jessica Stundze | Author</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Adventures of Pebblewick</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #faf9f6;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
+      color: #f0f0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+    p.description {
+      max-width: 700px;
+      font-size: 1.2rem;
       line-height: 1.6;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+      white-space: pre-line;
     }
-    header {
-      background: #a67c52;
-      color: white;
-      padding: 2rem;
-      text-align: center;
+    a.preorder-link {
+      font-size: 1.3rem;
+      color: #f9d423;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      background: rgba(255 255 255 / 0.15);
+      box-shadow: 0 0 10px #f9d423;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      margin: 0;
-      font-size: 2.8rem;
-    }
-    section {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-    }
-    .book {
-      margin-top: 2rem;
-      text-align: center;
-    }
-    .book img {
-      max-width: 200px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .book h2 {
-      margin-top: 1rem;
-      font-family: 'Playfair Display', serif;
-    }
-    .bio, .contact {
-      margin-top: 3rem;
+    a.preorder-link:hover {
+      background: #f9d423;
+      color: #3a1c71;
+      box-shadow: 0 0 20px #f9d423;
     }
     footer {
-      background: #e4dcd1;
-      text-align: center;
-      padding: 1rem;
+      margin-top: 3rem;
       font-size: 0.9rem;
-      color: #555;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.7rem 1.2rem;
-      background-color: #a67c52;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-    a.button:hover {
-      background-color: #8a6440;
+      color: #bbb;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Jessica Stundze</h1>
-    <p>Children's Fantasy Author</p>
-  </header>
+  <h1>The Adventures of Pebblewick</h1>
+  <p class="description">
+    Not all stones stay planted.
 
-  <section class="bio">
-    <h2>About the Author</h2>
-    <p>Jessica Stundze is a passionate storyteller who brings whimsical worlds to life for young readers. Her stories celebrate adventure, curiosity, and the courage to be different.</p>
-  </section>
+    Pebblewick was placed in a quiet garden to rest, to be still—just as he was shaped to do. But deep inside, something hummed. A call to roll, to move, to find something beyond the fence and flowers.
 
-  <section class="book">
-    <img src="https://via.placeholder.com/200x300?text=Book+Cover" alt="The Adventures of Pebblewick cover">
-    <h2>The Adventures of Pebblewick</h2>
-    <p>Pebblewick was made to sit still. But he's about to start rolling—right into the biggest adventure of his life.</p>
-    <a href="#" class="button">Buy Now</a>
-  </section>
+    When he finally sets off, Pebblewick tumbles into a world both beautiful and broken. Shadows twist through ancient forests, long-lost magic stirs beneath the ground, and the once-harmonious hum of the land has fallen silent.
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:hello@jessicastundze.com">hello@jessicastundze.com</a></p>
-    <p>Follow on social media: <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
-  </section>
+    Alongside Thistle, a fiery-winged forest sprite, and Nib, a scrappy squirrel with a sharp tongue and a good heart, Pebblewick must follow a trail of forgotten light toward the Heart of the World.
 
+    Guided by whispers of the past and challenged by illusions, darkness, and doubt, Pebblewick discovers that he is more than a garden stone — he is a seed of something long buried and deeply needed.
+
+    A tale of bravery and strange wonders, where a curious stone leaves behind everything familiar and tumbles into a world full of secrets, shadows, and unexpected strength.
+  </p>
+  <a
+    class="preorder-link"
+    href="https://www.barnesandnoble.com/w/the-adventures-of-pebblewick-jessica-stundze/1147626330;jsessionid=7934B1D0A49434A49709AA14F614748B.prodny_store01-atgap10?ean=9798317680879"
+    target="_blank"
+    rel="noopener noreferrer"
+    >Preorder on Barnes & Noble</a
+  >
   <footer>
-    &copy; 2025 Jessica Stundze. All rights reserved.
+    &copy; 2025 Jessica Stundze
   </footer>
 </body>
 </html>
