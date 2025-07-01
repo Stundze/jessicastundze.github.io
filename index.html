@@ -29,7 +29,7 @@
       margin-top: 2rem;
       text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
     }
-    p.description, p.author-bio {
+    p.description, p.author-bio, p.contact {
       max-width: 700px;
       font-size: 1.2rem;
       line-height: 1.6;
@@ -45,7 +45,7 @@
       margin-bottom: 2rem;
       box-shadow: 0 0 15px rgba(0,0,0,0.4);
     }
-    a.preorder-link {
+    a.preorder-link, a.email-link {
       font-size: 1.3rem;
       color: #f9d423;
       text-decoration: none;
@@ -55,8 +55,10 @@
       background: rgba(255 255 255 / 0.15);
       box-shadow: 0 0 10px #f9d423;
       transition: background-color 0.3s ease, color 0.3s ease;
+      display: inline-block;
+      margin: 1rem 0;
     }
-    a.preorder-link:hover {
+    a.preorder-link:hover, a.email-link:hover {
       background: #f9d423;
       color: #3a1c71;
       box-shadow: 0 0 20px #f9d423;
@@ -97,6 +99,13 @@
     rel="noopener noreferrer"
     >Preorder on Barnes & Noble</a
   >
+
+  <h2>Contact Me</h2>
+  <p class="contact">
+    Have questions, feedback, or just want to say hello?
+  </p>
+  <a class="email-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
+
   <footer>
     &copy; 2025 Jessica Stundze
   </footer>
