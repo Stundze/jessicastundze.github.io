@@ -13,10 +13,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       padding: 2rem;
       text-align: center;
+    }
+    img.top-banner {
+      width: 100%;
+      max-height: 120px;
+      object-fit: cover;
+      margin-bottom: 2rem;
     }
     h1 {
       font-size: 3rem;
@@ -37,6 +41,13 @@
       text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
       white-space: pre-line;
     }
+    .book-banner {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
     .author-photo {
       max-width: 300px;
       width: 100%;
@@ -44,13 +55,6 @@
       border-radius: 10px;
       margin-bottom: 2rem;
       box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    }
-    .book-banner {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
     a.preorder-link, a.email-link {
       font-size: 1.3rem;
@@ -78,6 +82,11 @@
   </style>
 </head>
 <body>
+
+  <!-- Top Banner -->
+  <img src="Top banner .jpg" alt="Barnes & Noble Top Banner" class="top-banner" />
+
+  <!-- Book Banner -->
   <img src="Large banner.jpg" alt="The Adventures of Pebblewick Banner" class="book-banner" />
 
   <h1>The Adventures of Pebblewick</h1>
@@ -117,6 +126,9 @@
 
   <footer>
     &copy; 2025 Jessica Stundze
+  </footer>
+</body>
+</html>
   </footer>
 </body>
 </html>
