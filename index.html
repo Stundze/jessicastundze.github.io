@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Adventures of Pebblewick by Jessica Stundze</title>
   <style>
+    /* Body and layout */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,38 +14,50 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
+
+    /* Container for all content */
+    .content {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    /* Headings */
     h1 {
       font-size: 3rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       font-weight: 700;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     }
     h2 {
       font-size: 2rem;
       margin-top: 2rem;
+      margin-bottom: 1rem;
       text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
     }
+
+    /* Paragraphs */
     p.description, p.author-bio, p.contact {
-      max-width: 700px;
       font-size: 1.2rem;
-      line-height: 1.6;
+      line-height: 1.8;
       margin-bottom: 2rem;
       text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
       white-space: pre-line;
     }
+
+    /* Author photo */
     .author-photo {
-      max-width: 300px;
-      width: 100%;
+      width: 300px;
+      max-width: 90%;
       height: auto;
       border-radius: 10px;
-      margin-bottom: 2rem;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      margin: 2rem 0;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
+
+    /* Links */
     a.order-link, a.email-link {
       font-size: 1.3rem;
       color: #f9d423;
@@ -52,7 +65,7 @@
       font-weight: bold;
       padding: 0.75rem 1.5rem;
       border-radius: 6px;
-      background: rgba(255 255 255 / 0.15);
+      background: rgba(255,255,255,0.15);
       box-shadow: 0 0 10px #f9d423;
       transition: background-color 0.3s ease, color 0.3s ease;
       display: inline-block;
@@ -63,51 +76,70 @@
       color: #3a1c71;
       box-shadow: 0 0 20px #f9d423;
     }
+
+    /* Footer */
     footer {
       margin-top: 3rem;
       font-size: 0.9rem;
       color: #bbb;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      .author-photo {
+        width: 80%;
+      }
+    }
   </style>
 </head>
 <body>
-  <h2>About the Author</h2>
-  <p class="author-bio">
-    Jessica Stundze is a storyteller who writes imaginative adventures for readers who love curious characters, magical worlds, and a little heart along the way. She believes in the power of books to help kids feel seen, brave, and excited to explore what makes them different.
+  <div class="content">
+    <h2>About the Author</h2>
+    <p class="author-bio">
+      Jessica Stundze is a storyteller who writes imaginative adventures for readers who love curious characters, magical worlds, and a little heart along the way. She believes in the power of books to help kids feel seen, brave, and excited to explore what makes them different.
 
-    Outside of writing, Jessica enjoys gardening, hiking, paddleboarding, and caring for her fish tanks — where she’s pretty sure at least one fish thinks it’s the hero of its own story. She’s always on the lookout for old books, new ideas, and quiet moments to dream up what comes next.
-  </p>
-  <img src="IMG_9318.JPG" alt="Jessica Stundze" class="author-photo" />
-  
-  <h1>The Adventures of Pebblewick</h1>
-  <p class="description">
-    Not all stones stay planted.
+      Outside of writing, Jessica enjoys gardening, hiking, paddleboarding, and caring for her fish tanks — where she’s pretty sure at least one fish thinks it’s the hero of its own story. She’s always on the lookout for old books, new ideas, and quiet moments to dream up what comes next.
+    </p>
 
-    Pebblewick was placed in a quiet garden to rest, to be still—just as he was shaped to do. But deep inside, something hummed. A call to roll, to move, to find something beyond the fence and flowers.
+    <!-- Updated author image -->
+    <img src="IMG_9318.JPG" alt="Jessica Stundze" class="author-photo">
 
-    When he finally sets off, Pebblewick tumbles into a world both beautiful and broken. Shadows twist through ancient forests, long-lost magic stirs beneath the ground, and the once-harmonious hum of the land has fallen silent.
+    <h1>The Adventures of Pebblewick</h1>
+    <p class="description">
+      Not all stones stay planted.
 
-    Alongside Thistle, a fiery-winged forest sprite, and Nib, a scrappy squirrel with a sharp tongue and a good heart, Pebblewick must follow a trail of forgotten light toward the Heart of the World.
+      Pebblewick was placed in a quiet garden to rest, to be still—just as he was shaped to do. But deep inside, something hummed. A call to roll, to move, to find something beyond the fence and flowers.
 
-    Guided by whispers of the past and challenged by illusions, darkness, and doubt, Pebblewick discovers that he is more than a garden stone — he is a seed of something long buried and deeply needed.
+      When he finally sets off, Pebblewick tumbles into a world both beautiful and broken. Shadows twist through ancient forests, long-lost magic stirs beneath the ground, and the once-harmonious hum of the land has fallen silent.
 
-    A tale of bravery and strange wonders, where a curious stone leaves behind everything familiar and tumbles into a world full of secrets, shadows, and unexpected strength.
-  </p>
-  <a
-    class="order-link"
-    href="https://www.barnesandnoble.com/w/the-adventures-of-pebblewick-jessica-stundze/1147626330;jsessionid=7934B1D0A49434A49709AA14F614748B.prodny_store01-atgap10?ean=9798317680879"
-    target="_blank"
-    rel="noopener noreferrer"
-  >Order Now on Barnes & Noble</a>
+      Alongside Thistle, a fiery-winged forest sprite, and Nib, a scrappy squirrel with a sharp tongue and a good heart, Pebblewick must follow a trail of forgotten light toward the Heart of the World.
 
-  <h2>Contact Me</h2>
-  <p class="contact">
-    Have questions, feedback, or just want to say hello?
-  </p>
-  <a class="email-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
+      Guided by whispers of the past and challenged by illusions, darkness, and doubt, Pebblewick discovers that he is more than a garden stone — he is a seed of something long buried and deeply needed.
 
-  <footer>
-    &copy; 2025 Jessica Stundze
-  </footer>
+      A tale of bravery and strange wonders, where a curious stone leaves behind everything familiar and tumbles into a world full of secrets, shadows, and unexpected strength.
+    </p>
+
+    <a class="order-link"
+       href="https://www.barnesandnoble.com/w/the-adventures-of-pebblewick-jessica-stundze/1147626330;jsessionid=7934B1D0A49434A49709AA14F614748B.prodny_store01-atgap10?ean=9798317680879"
+       target="_blank" rel="noopener noreferrer">
+      Order Now on Barnes & Noble
+    </a>
+
+    <h2>Contact Me</h2>
+    <p class="contact">
+      Have questions, feedback, or just want to say hello?
+    </p>
+    <a class="email-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
+
+    <footer>
+      &copy; 2025 Jessica Stundze
+    </footer>
+  </div>
 </body>
 </html>
