@@ -26,8 +26,9 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      position: sticky;
+      position: fixed; /* changed from sticky to fixed */
       top: 0;
+      left: 0;
       z-index: 1000;
     }
 
@@ -47,6 +48,7 @@
     .content {
       max-width: 800px;
       width: 100%;
+      margin-top: 100px; /* extra space so content isn't hidden behind nav */
     }
 
     /* Headings */
@@ -115,6 +117,7 @@
       h1 { font-size: 2.2rem; }
       h2 { font-size: 1.6rem; }
       .author-photo { width: 80%; }
+      .content { margin-top: 120px; } /* more space for smaller screens */
     }
   </style>
 </head>
