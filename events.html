@@ -6,7 +6,7 @@
   <title>Events | Jessica Stundze</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Add this if your style.css doesn't have nav styles yet */
+    /* Navigation bar */
     nav {
       width: 100%;
       background: rgba(0,0,0,0.4);
@@ -35,6 +35,49 @@
       max-width: 800px;
       width: 100%;
       margin-top: 2rem; /* to avoid nav overlap */
+      text-align: center;
+    }
+
+    /* Event card */
+    .event {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+
+    .event h2 {
+      font-size: 1.8rem;
+      color: #f9d423;
+      margin-bottom: 0.5rem;
+    }
+
+    .register-link {
+      font-size: 1.2rem;
+      color: #f9d423;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 0 10px #f9d423;
+      transition: background-color 0.3s, color 0.3s;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .register-link:hover {
+      background: #f9d423;
+      color: #3a1c71;
+      box-shadow: 0 0 20px #f9d423;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #bbb;
     }
   </style>
 </head>
@@ -48,13 +91,14 @@
   <div class="content">
     <h1>Upcoming Events</h1>
 
-    <p><strong>Children's Book Reading with Jessica Stundze</strong><br>
-    Date: Sunday, September 28 · 11am - 12pm PDT<br>
-    Enjoy a live reading of <em>The Adventures of Pebblewick</em>.</p>
-
-    <a class="register-link" href="https://www.eventbrite.com/e/childrens-book-reading-with-author-jessica-stundze-tickets-1626751771339?aff=ebdsoporgprofile" target="_blank" rel="noopener noreferrer">
-      Register on Eventbrite
-    </a>
+    <div class="event">
+      <h2>Children's Book Reading with Jessica Stundze</h2>
+      <p>Date: Sunday, September 28 · 11am - 12pm PDT</p>
+      <p>Enjoy a live reading of <em>The Adventures of Pebblewick</em>.</p>
+      <a class="register-link" href="https://www.eventbrite.com/e/childrens-book-reading-with-author-jessica-stundze-tickets-1626751771339?aff=ebdsoporgprofile" target="_blank" rel="noopener noreferrer">
+        Register on Eventbrite
+      </a>
+    </div>
 
     <footer>
       &copy; 2025 Jessica Stundze
