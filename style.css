@@ -1,0 +1,145 @@
+/* General site styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
+  color: #f0f0f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  padding-top: 70px; /* space for fixed nav */
+}
+
+/* Navigation bar */
+nav {
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: #f9d423;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* Headings */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Book and event cards */
+.book, .event {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  max-width: 700px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+.book h2, .event h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #f9d423;
+}
+
+.book p, .event p {
+  margin: 0.5rem 0 1rem;
+}
+
+/* Links for ordering or registering */
+.order-link, .register-link {
+  font-size: 1.2rem;
+  color: #f9d423;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 10px #f9d423;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+.order-link:hover, .register-link:hover {
+  background: #f9d423;
+  color: #3a1c71;
+}
+
+/* Event enhancements */
+.event p.date {
+  font-weight: bold;
+  color: #f9d423;
+  margin-bottom: 0.5rem;
+}
+
+.event p.description {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.4);
+  width: 100%;
+  text-align: center;
+  color: #bbb;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+footer a {
+  color: #f9d423;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #fff;
+}
+/* Footer */
+footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.4);
+  width: 100%;
+  text-align: center;
+  color: #bbb;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+footer a {
+  color: #f9d423;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #fff;
+}
