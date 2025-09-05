@@ -89,7 +89,7 @@ h1 {
 /* Event enhancements */
 .event p.date {
   font-weight: bold;
-  color: #f9d423;
+  color: #f9d423; /* gold color */
   margin-bottom: 0.5rem;
 }
 
@@ -100,28 +100,6 @@ h1 {
 }
 
 /* Footer styling */
-footer {
-  margin-top: 3rem;
-  padding: 1.5rem;
-  background: rgba(0,0,0,0.4);
-  width: 100%;
-  text-align: center;
-  color: #bbb;
-  font-size: 0.9rem;
-  position: relative;
-}
-
-footer a {
-  color: #f9d423;
-  text-decoration: none;
-  margin: 0 0.5rem;
-  font-weight: bold;
-}
-
-footer a:hover {
-  color: #fff;
-}
-/* Footer */
 footer {
   margin-top: 3rem;
   padding: 1.5rem;
