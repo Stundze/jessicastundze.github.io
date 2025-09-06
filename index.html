@@ -26,7 +26,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      position: fixed; /* changed from sticky to fixed */
+      position: fixed;
       top: 0;
       left: 0;
       z-index: 1000;
@@ -48,7 +48,7 @@
     .content {
       max-width: 800px;
       width: 100%;
-      margin-top: 100px; /* extra space so content isn't hidden behind nav */
+      margin-top: 100px; /* keeps content below nav */
     }
 
     /* Headings */
@@ -66,7 +66,7 @@
     }
 
     /* Paragraphs */
-    p.description, p.author-bio, p.contact {
+    p.description, p.author-bio {
       font-size: 1.2rem;
       line-height: 1.8;
       margin-bottom: 2rem;
@@ -85,7 +85,7 @@
     }
 
     /* Links */
-    a.order-link, a.email-link {
+    a.order-link {
       font-size: 1.3rem;
       color: #f9d423;
       text-decoration: none;
@@ -99,7 +99,7 @@
       margin: 1rem 0;
     }
 
-    a.order-link:hover, a.email-link:hover {
+    a.order-link:hover {
       background: #f9d423;
       color: #3a1c71;
       box-shadow: 0 0 20px #f9d423;
@@ -117,7 +117,7 @@
       h1 { font-size: 2.2rem; }
       h2 { font-size: 1.6rem; }
       .author-photo { width: 80%; }
-      .content { margin-top: 120px; } /* more space for smaller screens */
+      .content { margin-top: 120px; }
     }
   </style>
 </head>
@@ -126,6 +126,7 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <!-- Main content -->
@@ -158,15 +159,10 @@
       Order Now on Barnes & Noble
     </a>
 
-    <h2>Contact Me</h2>
-    <p class="contact">
-      Have questions, feedback, or just want to say hello?
-    </p>
-    <a class="email-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
-
     <footer>
       &copy; 2025 Jessica Stundze
     </footer>
   </div>
 </body>
 </html>
+
