@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Jessica Stundze</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
+      color: #f0f0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    /* Fixed navigation bar */
+    nav {
+      width: 100%;
+      background: rgba(0,0,0,0.4);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #f9d423;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* Content box */
+    .content {
+      max-width: 800px;
+      width: 100%;
+      margin-top: 100px; /* push content below fixed nav */
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+
+    /* Email button */
+    a.email-link {
+      font-size: 1.3rem;
+      color: #f9d423;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 0 10px #f9d423;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: inline-block;
+    }
+
+    a.email-link:hover {
+      background: #f9d423;
+      color: #3a1c71;
+      box-shadow: 0 0 20px #f9d423;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Contact Me</h1>
+    <p>
+      I’d love to hear from you! Whether you’re a reader, parent, teacher, or fellow writer, feel free to reach out with your questions, feedback, or just to say hello.
+    </p>
+
+    <a class="email-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
+
+    <footer>
+      &copy; 2025 Jessica Stundze
+    </footer>
+  </div>
+</body>
+</html>
