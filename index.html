@@ -5,31 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Adventures of Pebblewick by Jessica Stundze</title>
   <style>
-    /* Make body and html full height and prevent default scroll */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden; /* Disable body scroll */
-    }
-
-    /* Scrollable wrapper */
-    .scroll-wrapper {
-      height: 100%;
-      overflow-y: scroll;   /* allow scrolling */
-      overflow-x: hidden;   /* prevent horizontal scroll/bounce */
-      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-      scrollbar-width: none; /* Hide scrollbar on desktop Firefox */
-    }
-    .scroll-wrapper::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Edge */
-    }
-
-    /* Body and layout inside wrapper */
-    body, .scroll-wrapper {
+    /* General styles */
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
       color: #f0f0f5;
+      margin: 0;
+      padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -62,11 +44,11 @@
       color: #fff;
     }
 
-    /* Container for content */
+    /* Content container */
     .content {
       max-width: 800px;
       width: 100%;
-      margin-top: 100px; /* space so content isn’t hidden behind nav */
+      margin-top: 100px;
       padding: 1rem;
     }
 
@@ -77,6 +59,7 @@
       font-weight: 700;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     }
+
     h2 {
       font-size: 2rem;
       margin-top: 2rem;
@@ -103,7 +86,7 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
 
-    /* Links - order, Goodreads, etc. */
+    /* Links */
     a.order-link, a.goodreads-link {
       font-size: 1.3rem;
       color: #f9d423;
@@ -125,7 +108,7 @@
       background: #f9d423;
       color: #3a1c71;
       box-shadow: 0 0 20px #f9d423;
-      transform: scale(1.05); /* subtle pop */
+      transform: scale(1.05);
     }
 
     .goodreads-icon {
@@ -135,7 +118,7 @@
     }
 
     a.goodreads-link:hover .goodreads-icon {
-      transform: scale(1.2); /* icon pops slightly on hover */
+      transform: scale(1.2);
     }
 
     /* Footer */
@@ -156,54 +139,50 @@
   </style>
 </head>
 <body>
-  <div class="scroll-wrapper">
-    <!-- Navigation bar -->
+  <div class="content">
     <nav>
       <a href="index.html">Home</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Main content -->
-    <div class="content">
-      <h2>About the Author</h2>
-      <p class="author-bio">
-        Jessica Stundze is a storyteller who writes imaginative adventures for readers who love curious characters, magical worlds, and a little heart along the way. She believes in the power of books to help kids feel seen, brave, and excited to explore what makes them different.
+    <h2>About the Author</h2>
+    <p class="author-bio">
+      Jessica Stundze is a storyteller who writes imaginative adventures for readers who love curious characters, magical worlds, and a little heart along the way. She believes in the power of books to help kids feel seen, brave, and excited to explore what makes them different.
 
-        Outside of writing, Jessica enjoys gardening, hiking, paddleboarding, and caring for her fish tanks — where she’s pretty sure at least one fish thinks it’s the hero of its own story. She’s always on the lookout for old books, new ideas, and quiet moments to dream up what comes next.
-      </p>
+      Outside of writing, Jessica enjoys gardening, hiking, paddleboarding, and caring for her fish tanks — where she’s pretty sure at least one fish thinks it’s the hero of its own story. She’s always on the lookout for old books, new ideas, and quiet moments to dream up what comes next.
+    </p>
 
-      <img src="cover.jpg" alt="Jessica Stundze" class="author-photo">
+    <img src="cover.jpg" alt="Jessica Stundze" class="author-photo">
 
-      <h1>The Adventures of Pebblewick</h1>
-      <p class="description">
-        Not all stones stay planted.
+    <h1>The Adventures of Pebblewick</h1>
+    <p class="description">
+      Not all stones stay planted.
 
-        Pebblewick was placed in a quiet garden to rest, to be still—just as he was shaped to do. But deep inside, something hummed. A call to roll, to move, to find something beyond the fence and flowers.
+      Pebblewick was placed in a quiet garden to rest, to be still—just as he was shaped to do. But deep inside, something hummed. A call to roll, to move, to find something beyond the fence and flowers.
 
-        When he finally sets off, Pebblewick tumbles into a world both beautiful and broken. Shadows twist through ancient forests, long-lost magic stirs beneath the ground, and the once-harmonious hum of the land has fallen silent.
+      When he finally sets off, Pebblewick tumbles into a world both beautiful and broken. Shadows twist through ancient forests, long-lost magic stirs beneath the ground, and the once-harmonious hum of the land has fallen silent.
 
-        Alongside Thistle, a fiery-winged forest sprite, and Nib, a scrappy squirrel with a sharp tongue and a good heart, Pebblewick must follow a trail of forgotten light toward the Heart of the World.
+      Alongside Thistle, a fiery-winged forest sprite, and Nib, a scrappy squirrel with a sharp tongue and a good heart, Pebblewick must follow a trail of forgotten light toward the Heart of the World.
 
-        Guided by whispers of the past and challenged by illusions, darkness, and doubt, Pebblewick discovers that he is more than a garden stone — he is a seed of something long buried and deeply needed.
+      Guided by whispers of the past and challenged by illusions, darkness, and doubt, Pebblewick discovers that he is more than a garden stone — he is a seed of something long buried and deeply needed.
 
-        A tale of bravery and strange wonders, where a curious stone leaves behind everything familiar and tumbles into a world full of secrets, shadows, and unexpected strength.
-      </p>
+      A tale of bravery and strange wonders, where a curious stone leaves behind everything familiar and tumbles into a world full of secrets, shadows, and unexpected strength.
+    </p>
 
-      <!-- Buttons: Barnes & Noble and Goodreads -->
-      <a class="order-link" href="https://www.barnesandnoble.com/w/the-adventures-of-pebblewick-jessica-stundze/1147626330?ean=9798317680879" target="_blank" rel="noopener noreferrer">
-        Order Now on Barnes & Noble
-      </a>
+    <a class="order-link" href="https://www.barnesandnoble.com/w/the-adventures-of-pebblewick-jessica-stundze/1147626330?ean=9798317680879" target="_blank" rel="noopener noreferrer">
+      Order Now on Barnes & Noble
+    </a>
 
-      <a class="goodreads-link" href="https://www.goodreads.com/book/show/237460562-the-adventures-of-pebblewick?from_search=true&from_srp=true&qid=NOsltLplEG&rank=1" target="_blank" rel="noopener noreferrer">
-        <img class="goodreads-icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111496.png" alt="Goodreads">
-        View on Goodreads
-      </a>
+    <a class="goodreads-link" href="https://www.goodreads.com/book/show/237460562-the-adventures-of-pebblewick?from_search=true&from_srp=true&qid=NOsltLplEG&rank=1" target="_blank" rel="noopener noreferrer">
+      <img class="goodreads-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Goodreads_logo_2025.svg/303px-Goodreads_logo_2025.svg.png" alt="Goodreads">
+      View on Goodreads
+    </a>
 
-      <footer>
-        &copy; 2025 Jessica Stundze
-      </footer>
-    </div>
+    <footer>
+      &copy; 2025 Jessica Stundze
+    </footer>
   </div>
 </body>
 </html>
+
