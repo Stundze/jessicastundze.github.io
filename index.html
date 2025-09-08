@@ -5,31 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Adventures of Pebblewick by Jessica Stundze</title>
   <style>
-    /* Ensure full height and prevent body scroll on desktop */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden; /* No scrollbars on desktop */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
-      color: #f0f0f5;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      text-align: center;
+    /* Desktop: no scroll at all */
+    @media (min-width: 501px) {
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* completely remove scroll */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
+        color: #f0f0f5;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: center;
+      }
+
+      .scroll-wrapper {
+        height: 100%;
+        width: 100%;
+        overflow: hidden; /* no scroll on desktop */
+        padding-top: 100px; /* space for fixed nav */
+        box-sizing: border-box;
+      }
     }
 
-    /* Scrollable wrapper for mobile */
-    .scroll-wrapper {
-      height: 100%;
-      width: 100%;
-      overflow-y: auto;   /* vertical scroll only if needed */
-      overflow-x: hidden; /* prevent horizontal scroll */
-      -webkit-overflow-scrolling: touch; /* smooth scroll for iOS */
-      overscroll-behavior: contain; /* prevent rubberband effect */
-      padding-top: 100px; /* space for fixed nav */
-      box-sizing: border-box;
+    /* Mobile: allow scrolling without rubberband */
+    @media (max-width: 500px) {
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
+        color: #f0f0f5;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: center;
+      }
+
+      .scroll-wrapper {
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;   /* vertical scroll allowed */
+        overflow-x: hidden; /* prevent horizontal scroll */
+        -webkit-overflow-scrolling: touch; /* smooth scroll iOS */
+        overscroll-behavior: contain; /* disable rubberband */
+        padding-top: 100px; /* space for fixed nav */
+        box-sizing: border-box;
+      }
     }
 
     nav {
@@ -137,3 +162,4 @@
   </div>
 </body>
 </html>
+
