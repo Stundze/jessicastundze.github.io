@@ -6,6 +6,33 @@
   <title>Events | Jessica Stundze</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Make body and html full height and prevent default scroll */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Disable body scroll */
+    }
+
+    /* Scrollable wrapper */
+    .scroll-wrapper {
+      height: 100%;
+      overflow-y: scroll;  /* vertical scroll */
+      overflow-x: hidden;  /* prevent horizontal scroll/bounce */
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    }
+
+    /* Body and layout inside wrapper */
+    body, .scroll-wrapper {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
+      color: #f0f0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
     /* Navigation bar */
     nav {
       width: 100%;
@@ -36,6 +63,7 @@
       width: 100%;
       margin-top: 2rem; /* to avoid nav overlap */
       text-align: center;
+      padding: 1rem;
     }
 
     /* Event card */
@@ -79,31 +107,39 @@
       font-size: 0.9rem;
       color: #bbb;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 500px) {
+      .event h2 { font-size: 1.5rem; }
+      .register-link { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
-  <!-- Navigation bar -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="scroll-wrapper">
+    <!-- Navigation bar -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <div class="content">
-    <h1>Upcoming Events</h1>
+    <div class="content">
+      <h1>Upcoming Events</h1>
 
-    <div class="event">
-      <h2>Children's Book Reading with Jessica Stundze</h2>
-      <p>Date: Sunday, September 28 · 11am - 12pm PDT</p>
-      <p>Enjoy a live reading of <em>The Adventures of Pebblewick</em>.</p>
-      <a class="register-link" href="https://www.eventbrite.com/e/childrens-book-reading-with-author-jessica-stundze-tickets-1626751771339?aff=ebdsoporgprofile" target="_blank" rel="noopener noreferrer">
-        Register on Eventbrite
-      </a>
+      <div class="event">
+        <h2>Children's Book Reading with Jessica Stundze</h2>
+        <p>Date: Sunday, September 28 · 11am - 12pm PDT</p>
+        <p>Enjoy a live reading of <em>The Adventures of Pebblewick</em>.</p>
+        <a class="register-link" href="https://www.eventbrite.com/e/childrens-book-reading-with-author-jessica-stundze-tickets-1626751771339?aff=ebdsoporgprofile" target="_blank" rel="noopener noreferrer">
+          Register on Eventbrite
+        </a>
+      </div>
+
+      <footer>
+        &copy; 2025 Jessica Stundze
+      </footer>
     </div>
-
-    <footer>
-      &copy; 2025 Jessica Stundze
-    </footer>
   </div>
 </body>
 </html>
