@@ -126,6 +126,14 @@
       .author-photo { width: 80%; }
       .content { margin-top: 120px; }
     }
+
+    /* Prevent overscroll bounce on mobile */
+    @media (max-width: 768px) {
+      html, body {
+        overscroll-behavior-y: contain; /* Stops the white bounce */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      }
+    }
   </style>
 </head>
 <body>
