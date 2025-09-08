@@ -16,8 +16,9 @@
     /* Scrollable wrapper */
     .scroll-wrapper {
       height: 100%;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      overflow-y: scroll;  /* vertical scroll */
+      overflow-x: hidden;  /* prevent horizontal scroll/bounce */
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
     }
 
     /* Body and layout inside wrapper */
