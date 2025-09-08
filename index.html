@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Adventures of Pebblewick by Jessica Stundze</title>
   <style>
-    /* Prevent horizontal scrolling */
+    /* Make body and html full height and prevent default scroll */
     html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-      width: 100%;
+      overflow: hidden; /* Disable body scroll */
     }
 
-    /* Body and layout */
-    body {
+    /* Scrollable wrapper */
+    .scroll-wrapper {
+      height: 100%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    /* Body and layout inside wrapper */
+    body, .scroll-wrapper {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
       color: #f0f0f5;
@@ -126,80 +133,51 @@
       .author-photo { width: 80%; }
       .content { margin-top: 120px; }
     }
-
-    /* Mobile overscroll prevention (modern browsers) */
-    @media (max-width: 768px) {
-      html, body {
-        overscroll-behavior-y: contain;
-        -webkit-overflow-scrolling: touch;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- Navigation bar -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="scroll-wrapper">
+    <!-- Navigation bar -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <!-- Main content -->
-  <div class="content">
-    <h2>About the Author</h2>
-    <p class="author-bio">
-      Jessica Stundze is a storyteller who writes imaginative adventures for readers who love curious characters, magical worlds, and a little heart along the way. She believes in the power of books to help kids feel seen, brave, and excited to explore what makes them different.
+    <!-- Main content -->
+    <div class="content">
+      <h2>About the Author</h2>
+      <p class="author-bio">
+        Jessica Stundze is a storyteller who writes imaginative adventures for readers who love curious characters, magical worlds, and a little heart along the way. She believes in the power of books to help kids feel seen, brave, and excited to explore what makes them different.
 
-      Outside of writing, Jessica enjoys gardening, hiking, paddleboarding, and caring for her fish tanks — where she’s pretty sure at least one fish thinks it’s the hero of its own story. She’s always on the lookout for old books, new ideas, and quiet moments to dream up what comes next.
-    </p>
+        Outside of writing, Jessica enjoys gardening, hiking, paddleboarding, and caring for her fish tanks — where she’s pretty sure at least one fish thinks it’s the hero of its own story. She’s always on the lookout for old books, new ideas, and quiet moments to dream up what comes next.
+      </p>
 
-    <img src="cover.jpg" alt="Jessica Stundze" class="author-photo">
+      <img src="cover.jpg" alt="Jessica Stundze" class="author-photo">
 
-    <h1>The Adventures of Pebblewick</h1>
-    <p class="description">
-      Not all stones stay planted.
+      <h1>The Adventures of Pebblewick</h1>
+      <p class="description">
+        Not all stones stay planted.
 
-      Pebblewick was placed in a quiet garden to rest, to be still—just as he was shaped to do. But deep inside, something hummed. A call to roll, to move, to find something beyond the fence and flowers.
+        Pebblewick was placed in a quiet garden to rest, to be still—just as he was shaped to do. But deep inside, something hummed. A call to roll, to move, to find something beyond the fence and flowers.
 
-      When he finally sets off, Pebblewick tumbles into a world both beautiful and broken. Shadows twist through ancient forests, long-lost magic stirs beneath the ground, and the once-harmonious hum of the land has fallen silent.
+        When he finally sets off, Pebblewick tumbles into a world both beautiful and broken. Shadows twist through ancient forests, long-lost magic stirs beneath the ground, and the once-harmonious hum of the land has fallen silent.
 
-      Alongside Thistle, a fiery-winged forest sprite, and Nib, a scrappy squirrel with a sharp tongue and a good heart, Pebblewick must follow a trail of forgotten light toward the Heart of the World.
+        Alongside Thistle, a fiery-winged forest sprite, and Nib, a scrappy squirrel with a sharp tongue and a good heart, Pebblewick must follow a trail of forgotten light toward the Heart of the World.
 
-      Guided by whispers of the past and challenged by illusions, darkness, and doubt, Pebblewick discovers that he is more than a garden stone — he is a seed of something long buried and deeply needed.
+        Guided by whispers of the past and challenged by illusions, darkness, and doubt, Pebblewick discovers that he is more than a garden stone — he is a seed of something long buried and deeply needed.
 
-      A tale of bravery and strange wonders, where a curious stone leaves behind everything familiar and tumbles into a world full of secrets, shadows, and unexpected strength.
-    </p>
+        A tale of bravery and strange wonders, where a curious stone leaves behind everything familiar and tumbles into a world full of secrets, shadows, and unexpected strength.
+      </p>
 
-    <a class="order-link" href="https://www.barnesandnoble.com/w/the-adventures-of-pebblewick-jessica-stundze/1147626330?ean=9798317680879" target="_blank" rel="noopener noreferrer">
-      Order Now on Barnes & Noble
-    </a>
+      <a class="order-link" href="https://www.barnesandnoble.com/w/the-adventures-of-pebblewick-jessica-stundze/1147626330?ean=9798317680879" target="_blank" rel="noopener noreferrer">
+        Order Now on Barnes & Noble
+      </a>
 
-    <footer>
-      &copy; 2025 Jessica Stundze
-    </footer>
+      <footer>
+        &copy; 2025 Jessica Stundze
+      </footer>
+    </div>
   </div>
-
-  <!-- Mobile overscroll prevention (safe, allows normal scrolling) -->
-  <script>
-    let startY = 0;
-    document.body.addEventListener('touchstart', function(e) {
-      startY = e.touches[0].clientY;
-    }, { passive: true });
-
-    document.body.addEventListener('touchmove', function(e) {
-      const scrollTop = document.scrollingElement.scrollTop;
-      const scrollHeight = document.scrollingElement.scrollHeight;
-      const offsetHeight = document.scrollingElement.clientHeight;
-      const currentY = e.touches[0].clientY;
-      const isScrollingUp = currentY > startY;
-      const isScrollingDown = currentY < startY;
-
-      // Only prevent default if at top scrolling up OR at bottom scrolling down
-      if ((scrollTop === 0 && isScrollingUp) || 
-          (scrollTop + offsetHeight >= scrollHeight && isScrollingDown)) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-  </script>
 </body>
 </html>
