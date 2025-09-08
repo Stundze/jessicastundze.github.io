@@ -16,12 +16,11 @@
     /* Scrollable wrapper */
     .scroll-wrapper {
       height: 100%;
-      overflow-y: auto;  /* vertical scroll */
-      overflow-x: hidden; /* prevent horizontal scroll/bounce */
-      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
     }
 
-    /* Body and layout inside wrapper */
     body, .scroll-wrapper {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
@@ -32,7 +31,7 @@
       text-align: center;
     }
 
-    /* Fixed navigation bar */
+    /* Navigation */
     nav {
       width: 100%;
       background: rgba(0,0,0,0.4);
@@ -58,11 +57,10 @@
       color: #fff;
     }
 
-    /* Content box */
     .content {
       max-width: 800px;
       width: 100%;
-      margin-top: 100px; /* push content below fixed nav */
+      margin-top: 100px; /* push content below nav */
       padding: 1rem;
     }
 
@@ -79,16 +77,15 @@
       text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
     }
 
-    /* Button container stacked vertically for all screens */
+    /* Buttons stacked vertically for all screen sizes */
     .button-container {
       display: flex;
       flex-direction: column; /* stack vertically */
-      gap: 1.5rem; /* spacing between buttons */
+      gap: 1.5rem;
       align-items: center;
       margin-bottom: 2rem;
     }
 
-    /* Button styles (email and Instagram) */
     .button-link {
       display: inline-flex;
       align-items: center;
@@ -104,7 +101,7 @@
       box-shadow: 0 0 10px #f9d423;
       cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-      width: 250px; /* same width for both buttons */
+      width: 250px; /* same width for both */
       text-align: center;
     }
 
@@ -114,25 +111,16 @@
       box-shadow: 0 0 20px #f9d423;
     }
 
-    /* Instagram SVG icon */
     .instagram-icon {
       width: 32px;
       height: 32px;
       fill: currentColor;
     }
 
-    /* Footer */
     footer {
       margin-top: 3rem;
       font-size: 0.9rem;
       color: #bbb;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 500px) {
-      h1 { font-size: 2.2rem; }
-      .button-link { font-size: 1.1rem; padding: 0.6rem 1.5rem; width: 200px; }
-      .instagram-icon { width: 28px; height: 28px; }
     }
   </style>
 </head>
@@ -145,7 +133,7 @@
       <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Content -->
     <div class="content">
       <h1>Contact Me</h1>
       <p>
@@ -153,10 +141,10 @@
       </p>
 
       <div class="button-container">
-        <!-- Email Button -->
+        <!-- Email -->
         <a class="button-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
 
-        <!-- Instagram Button -->
+        <!-- Instagram -->
         <a class="button-link" href="https://www.instagram.com/theadventuresofpebblewick/" target="_blank" rel="noopener noreferrer">
           <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9-51.3-114.9-114.9-114.9zm0 189.6c-41.3 0-74.7-33.4-74.7-74.7s33.4-74.7 74.7-74.7 74.7 33.4 74.7 74.7-33.4 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9-14.9 0-26.9-12-26.9-26.9s12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.6s-57.9-34.5-93.6-36.2c-37-2.1-147.8-2.1-184.8 0-35.7 1.7-67.3 9.9-93.6 36.2S2.1 138.3.4 174c-2.1 37-2.1 147.8 0 184.8 1.7 35.7 9.9 67.3 36.2 93.6s57.9 34.5 93.6 36.2c37 2.1 147.8 2.1 184.8 0 35.7-1.7 67.3-9.9 93.6-36.2s34.5-57.9 36.2-93.6c2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5 29.4-11.7 99.2-9 132.3-9s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.7 102.9-9 132.3z"/>
