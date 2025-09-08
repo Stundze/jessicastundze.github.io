@@ -10,21 +10,15 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      overflow: hidden; /* disable body scroll */
+      overflow: hidden; /* Disable body scroll */
     }
 
     /* Scrollable wrapper */
     .scroll-wrapper {
       height: 100%;
-      overflow-y: scroll; /* allow vertical scroll */
+      overflow-y: auto;  /* vertical scroll */
       overflow-x: hidden; /* prevent horizontal scroll/bounce */
       -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-
-      /* Hide scrollbar on desktop */
-      scrollbar-width: none; /* Firefox */
-    }
-    .scroll-wrapper::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Edge */
     }
 
     /* Body and layout inside wrapper */
@@ -85,8 +79,11 @@
       text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
     }
 
-    /* Buttons */
-    a.email-link, a.instagram-link {
+    /* Button styles (email and Instagram) */
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
       font-size: 1.3rem;
       color: #f9d423;
       text-decoration: none;
@@ -95,23 +92,21 @@
       border-radius: 6px;
       background: rgba(255,255,255,0.15);
       box-shadow: 0 0 10px #f9d423;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 1.5rem;
     }
 
-    a.email-link:hover, a.instagram-link:hover {
+    .button-link:hover {
       background: #f9d423;
       color: #3a1c71;
       box-shadow: 0 0 20px #f9d423;
     }
 
-    /* Instagram icon */
+    /* Instagram SVG icon */
     .instagram-icon {
-      width: 20px;
-      height: 20px;
+      width: 32px;
+      height: 32px;
       fill: currentColor;
     }
 
@@ -125,8 +120,8 @@
     /* Responsive adjustments */
     @media (max-width: 500px) {
       h1 { font-size: 2.2rem; }
-      a.email-link, a.instagram-link { font-size: 1.1rem; padding: 0.6rem 1.2rem; }
-      .instagram-icon { width: 18px; height: 18px; }
+      .button-link { font-size: 1.1rem; padding: 0.6rem 1.2rem; }
+      .instagram-icon { width: 28px; height: 28px; }
     }
   </style>
 </head>
@@ -146,11 +141,13 @@
         I’d love to hear from you! Whether you’re a reader, parent, teacher, or fellow writer, feel free to reach out with your questions, feedback, or just to say hello.
       </p>
 
-      <a class="email-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
-      <br>
-      <a class="instagram-link" href="https://www.instagram.com/theadventuresofpebblewick/" target="_blank" rel="noopener noreferrer">
-        <svg class="instagram-icon" viewBox="0 0 512 512">
-          <path d="M349.33 69.33H162.67C110.2 69.33 69.33 110.2 69.33 162.67v186.66c0 52.47 40.87 93.34 93.34 93.34h186.66c52.47 0 93.34-40.87 93.34-93.34V162.67c0-52.47-40.87-93.34-93.34-93.34zm61.34 280c0 33.83-27.51 61.34-61.34 61.34H162.67c-33.83 0-61.34-27.51-61.34-61.34V162.67c0-33.83 27.51-61.34 61.34-61.34h186.66c33.83 0 61.34 27.51 61.34 61.34v186.66zM256 164c-50.87 0-92 41.13-92 92s41.13 92 92 92 92-41.13 92-92-41.13-92-92-92zm0 152c-33.07 0-60-26.93-60-60s26.93-60 60-60 60 26.93 60 60-26.93 60-60 60zm76-148c0 11.05-8.95 20-20 20s-20-8.95-20-20 8.95-20 20-20 20 8.95 20 20z"/>
+      <!-- Email Button -->
+      <a class="button-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
+
+      <!-- Instagram Button -->
+      <a class="button-link" href="https://www.instagram.com/theadventuresofpebblewick/" target="_blank" rel="noopener noreferrer">
+        <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9-51.3-114.9-114.9-114.9zm0 189.6c-41.3 0-74.7-33.4-74.7-74.7s33.4-74.7 74.7-74.7 74.7 33.4 74.7 74.7-33.4 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9-14.9 0-26.9-12-26.9-26.9s12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.6s-57.9-34.5-93.6-36.2c-37-2.1-147.8-2.1-184.8 0-35.7 1.7-67.3 9.9-93.6 36.2S2.1 138.3.4 174c-2.1 37-2.1 147.8 0 184.8 1.7 35.7 9.9 67.3 36.2 93.6s57.9 34.5 93.6 36.2c37 2.1 147.8 2.1 184.8 0 35.7-1.7 67.3-9.9 93.6-36.2s34.5-57.9 36.2-93.6c2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5 29.4-11.7 99.2-9 132.3-9s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.7 102.9-9 132.3z"/>
         </svg>
         Follow on Instagram
       </a>
