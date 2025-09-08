@@ -1,162 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact | Jessica Stundze</title>
-  <style>
-    /* Make body and html full height and prevent default scroll */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden; /* Disable body scroll */
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Jessica Stundze</title>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* no body scroll */
+}
 
-    /* Scrollable wrapper */
-    .scroll-wrapper {
-      height: 100%;
-      overflow-y: auto;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-    }
+.scroll-wrapper {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
 
-    body, .scroll-wrapper {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
-      color: #f0f0f5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+body, .scroll-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
+  color: #f0f0f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-    /* Navigation */
-    nav {
-      width: 100%;
-      background: rgba(0,0,0,0.4);
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
+nav {
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 
-    nav a {
-      color: #f9d423;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
+nav a {
+  color: #f9d423;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
 
-    nav a:hover {
-      color: #fff;
-    }
+nav a:hover { color: #fff; }
 
-    .content {
-      max-width: 800px;
-      width: 100%;
-      margin-top: 100px; /* push content below nav */
-      padding: 1rem;
-    }
+.content {
+  max-width: 800px;
+  width: 100%;
+  margin-top: 100px;
+  padding: 1rem;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-    }
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
 
-    /* Buttons stacked vertically for all screen sizes */
-    .button-container {
-      display: flex;
-      flex-direction: column; /* stack vertically */
-      gap: 1.5rem;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
+/* Force vertical button layout for all screen sizes */
+.button-container {
+  display: flex;
+  flex-direction: column; /* vertical stack */
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
 
-    .button-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      font-size: 1.3rem;
-      color: #f9d423;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.75rem 2rem;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 0 10px #f9d423;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-      width: 250px; /* same width for both */
-      text-align: center;
-    }
+/* Buttons same width and styling for all screens */
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.3rem;
+  color: #f9d423;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 10px #f9d423;
+  width: 250px; /* same width */
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
 
-    .button-link:hover {
-      background: #f9d423;
-      color: #3a1c71;
-      box-shadow: 0 0 20px #f9d423;
-    }
+.button-link:hover {
+  background: #f9d423;
+  color: #3a1c71;
+  box-shadow: 0 0 20px #f9d423;
+}
 
-    .instagram-icon {
-      width: 32px;
-      height: 32px;
-      fill: currentColor;
-    }
+.instagram-icon {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
 
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-  </style>
+footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+</style>
 </head>
 <body>
-  <div class="scroll-wrapper">
-    <!-- Navigation -->
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="events.html">Events</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+<div class="scroll-wrapper">
 
-    <!-- Content -->
-    <div class="content">
-      <h1>Contact Me</h1>
-      <p>
-        I’d love to hear from you! Whether you’re a reader, parent, teacher, or fellow writer, feel free to reach out with your questions, feedback, or just to say hello.
-      </p>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="events.html">Events</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-      <div class="button-container">
-        <!-- Email -->
-        <a class="button-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
+<div class="content">
+  <h1>Contact Me</h1>
+  <p>
+    I’d love to hear from you! Whether you’re a reader, parent, teacher, or fellow writer, feel free to reach out with your questions, feedback, or just to say hello.
+  </p>
 
-        <!-- Instagram -->
-        <a class="button-link" href="https://www.instagram.com/theadventuresofpebblewick/" target="_blank" rel="noopener noreferrer">
-          <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9-51.3-114.9-114.9-114.9zm0 189.6c-41.3 0-74.7-33.4-74.7-74.7s33.4-74.7 74.7-74.7 74.7 33.4 74.7 74.7-33.4 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9-14.9 0-26.9-12-26.9-26.9s12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.6s-57.9-34.5-93.6-36.2c-37-2.1-147.8-2.1-184.8 0-35.7 1.7-67.3 9.9-93.6 36.2S2.1 138.3.4 174c-2.1 37-2.1 147.8 0 184.8 1.7 35.7 9.9 67.3 36.2 93.6s57.9 34.5 93.6 36.2c37 2.1 147.8 2.1 184.8 0 35.7-1.7 67.3-9.9 93.6-36.2s34.5-57.9 36.2-93.6c2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5 29.4-11.7 99.2-9 132.3-9s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.7 102.9-9 132.3z"/>
-          </svg>
-          Follow on Instagram
-        </a>
-      </div>
+  <div class="button-container">
+    <a class="button-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
 
-      <footer>
-        &copy; 2025 Jessica Stundze
-      </footer>
-    </div>
+    <a class="button-link" href="https://www.instagram.com/theadventuresofpebblewick/" target="_blank" rel="noopener noreferrer">
+      <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9-51.3-114.9-114.9-114.9zm0 189.6c-41.3 0-74.7-33.4-74.7-74.7s33.4-74.7 74.7-74.7 74.7 33.4 74.7 74.7-33.4 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9-14.9 0-26.9-12-26.9-26.9s12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.6s-57.9-34.5-93.6-36.2c-37-2.1-147.8-2.1-184.8 0-35.7 1.7-67.3 9.9-93.6 36.2S2.1 138.3.4 174c-2.1 37-2.1 147.8 0 184.8 1.7 35.7 9.9 67.3 36.2 93.6s57.9 34.5 93.6 36.2c37 2.1 147.8 2.1 184.8 0 35.7-1.7 67.3-9.9 93.6-36.2s34.5-57.9 36.2-93.6c2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5 29.4-11.7 99.2-9 132.3-9s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.7 102.9-9 132.3z"/>
+      </svg>
+      Follow on Instagram
+    </a>
   </div>
+
+  <footer>
+    &copy; 2025 Jessica Stundze
+  </footer>
+</div>
+
+</div>
 </body>
 </html>
