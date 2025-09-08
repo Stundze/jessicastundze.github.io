@@ -127,11 +127,11 @@
       .content { margin-top: 120px; }
     }
 
-    /* Prevent overscroll bounce on mobile */
+    /* Mobile overscroll prevention (modern browsers) */
     @media (max-width: 768px) {
       html, body {
-        overscroll-behavior-y: contain; /* Stops the white bounce */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        overscroll-behavior-y: contain;
+        -webkit-overflow-scrolling: touch;
       }
     }
   </style>
@@ -178,5 +178,19 @@
       &copy; 2025 Jessica Stundze
     </footer>
   </div>
+
+  <!-- Mobile overscroll prevention (works on iOS & Android) -->
+  <script>
+    document.body.addEventListener('touchmove', function(e) {
+      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+      const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+      const offsetHeight = document.body.offsetHeight || document.documentElement.offsetHeight;
+
+      if ((scrollTop <= 0 && e.touches[0].clientY > 0) || 
+          (scrollTop + offsetHeight >= scrollHeight && e.touches[0].clientY < 0)) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  </script>
 </body>
 </html>
