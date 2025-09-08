@@ -17,9 +17,15 @@
     /* Scrollable wrapper */
     .scroll-wrapper {
       height: 100%;
-      overflow-y: scroll;  /* vertical scroll */
-      overflow-x: hidden;  /* prevent horizontal scroll/bounce */
+      overflow-y: scroll;   /* allow scrolling */
+      overflow-x: hidden;   /* prevent horizontal scroll */
       -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+
+      /* Hide scrollbar on desktop */
+      scrollbar-width: none; /* Firefox */
+    }
+    .scroll-wrapper::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
     }
 
     /* Body and layout inside wrapper */
