@@ -16,8 +16,8 @@
     /* Scrollable wrapper */
     .scroll-wrapper {
       height: 100%;
-      overflow-y: scroll;  /* vertical scroll */
-      overflow-x: hidden;  /* prevent horizontal scroll/bounce */
+      overflow-y: auto;  /* vertical scroll, only when needed */
+      overflow-x: hidden; /* prevent horizontal scroll/bounce */
       -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
     }
 
@@ -130,7 +130,7 @@
     /* Responsive adjustments */
     @media (max-width: 500px) {
       h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.6rem; }
+      h2 { font-size:1.6rem; }
       .author-photo { width: 80%; }
       .content { margin-top: 120px; }
     }
@@ -182,3 +182,4 @@
   </div>
 </body>
 </html>
+
