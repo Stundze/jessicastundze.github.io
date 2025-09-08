@@ -5,8 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact | Jessica Stundze</title>
   <style>
-    body {
+    /* Make body and html full height and prevent default scroll */
+    html, body {
+      height: 100%;
       margin: 0;
+      padding: 0;
+      overflow: hidden; /* disable body scroll */
+    }
+
+    /* Scrollable wrapper */
+    .scroll-wrapper {
+      height: 100%;
+      overflow-y: scroll; /* allow vertical scroll */
+      overflow-x: hidden; /* prevent horizontal scroll/bounce */
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+
+      /* Hide scrollbar on desktop */
+      scrollbar-width: none; /* Firefox */
+    }
+    .scroll-wrapper::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
+    }
+
+    /* Body and layout inside wrapper */
+    body, .scroll-wrapper {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
       color: #f0f0f5;
@@ -63,8 +85,8 @@
       text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
     }
 
-    /* Email button */
-    a.email-link {
+    /* Buttons */
+    a.email-link, a.instagram-link {
       font-size: 1.3rem;
       color: #f9d423;
       text-decoration: none;
@@ -74,13 +96,23 @@
       background: rgba(255,255,255,0.15);
       box-shadow: 0 0 10px #f9d423;
       transition: background-color 0.3s ease, color 0.3s ease;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
     }
 
-    a.email-link:hover {
+    a.email-link:hover, a.instagram-link:hover {
       background: #f9d423;
       color: #3a1c71;
       box-shadow: 0 0 20px #f9d423;
+    }
+
+    /* Instagram icon */
+    .instagram-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
     }
 
     /* Footer */
@@ -89,29 +121,44 @@
       font-size: 0.9rem;
       color: #bbb;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 500px) {
+      h1 { font-size: 2.2rem; }
+      a.email-link, a.instagram-link { font-size: 1.1rem; padding: 0.6rem 1.2rem; }
+      .instagram-icon { width: 18px; height: 18px; }
+    }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="scroll-wrapper">
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <!-- Main Content -->
-  <div class="content">
-    <h1>Contact Me</h1>
-    <p>
-      I’d love to hear from you! Whether you’re a reader, parent, teacher, or fellow writer, feel free to reach out with your questions, feedback, or just to say hello.
-    </p>
+    <!-- Main Content -->
+    <div class="content">
+      <h1>Contact Me</h1>
+      <p>
+        I’d love to hear from you! Whether you’re a reader, parent, teacher, or fellow writer, feel free to reach out with your questions, feedback, or just to say hello.
+      </p>
 
-    <a class="email-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
+      <a class="email-link" href="mailto:authorjessicastundze@gmail.com">Email Me</a>
+      <br>
+      <a class="instagram-link" href="https://www.instagram.com/theadventuresofpebblewick/" target="_blank" rel="noopener noreferrer">
+        <svg class="instagram-icon" viewBox="0 0 512 512">
+          <path d="M349.33 69.33H162.67C110.2 69.33 69.33 110.2 69.33 162.67v186.66c0 52.47 40.87 93.34 93.34 93.34h186.66c52.47 0 93.34-40.87 93.34-93.34V162.67c0-52.47-40.87-93.34-93.34-93.34zm61.34 280c0 33.83-27.51 61.34-61.34 61.34H162.67c-33.83 0-61.34-27.51-61.34-61.34V162.67c0-33.83 27.51-61.34 61.34-61.34h186.66c33.83 0 61.34 27.51 61.34 61.34v186.66zM256 164c-50.87 0-92 41.13-92 92s41.13 92 92 92 92-41.13 92-92-41.13-92-92-92zm0 152c-33.07 0-60-26.93-60-60s26.93-60 60-60 60 26.93 60 60-26.93 60-60 60zm76-148c0 11.05-8.95 20-20 20s-20-8.95-20-20 8.95-20 20-20 20 8.95 20 20z"/>
+        </svg>
+        Follow on Instagram
+      </a>
 
-    <footer>
-      &copy; 2025 Jessica Stundze
-    </footer>
+      <footer>
+        &copy; 2025 Jessica Stundze
+      </footer>
+    </div>
   </div>
 </body>
 </html>
-
