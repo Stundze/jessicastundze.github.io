@@ -179,15 +179,24 @@
     </footer>
   </div>
 
-  <!-- Mobile overscroll prevention (works on iOS & Android) -->
+  <!-- Mobile overscroll prevention (safe, allows normal scrolling) -->
   <script>
-    document.body.addEventListener('touchmove', function(e) {
-      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-      const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
-      const offsetHeight = document.body.offsetHeight || document.documentElement.offsetHeight;
+    let startY = 0;
+    document.body.addEventListener('touchstart', function(e) {
+      startY = e.touches[0].clientY;
+    }, { passive: true });
 
-      if ((scrollTop <= 0 && e.touches[0].clientY > 0) || 
-          (scrollTop + offsetHeight >= scrollHeight && e.touches[0].clientY < 0)) {
+    document.body.addEventListener('touchmove', function(e) {
+      const scrollTop = document.scrollingElement.scrollTop;
+      const scrollHeight = document.scrollingElement.scrollHeight;
+      const offsetHeight = document.scrollingElement.clientHeight;
+      const currentY = e.touches[0].clientY;
+      const isScrollingUp = currentY > startY;
+      const isScrollingDown = currentY < startY;
+
+      // Only prevent default if at top scrolling up OR at bottom scrolling down
+      if ((scrollTop === 0 && isScrollingUp) || 
+          (scrollTop + offsetHeight >= scrollHeight && isScrollingDown)) {
         e.preventDefault();
       }
     }, { passive: false });
