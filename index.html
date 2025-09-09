@@ -17,23 +17,27 @@
       position: relative;
     }
 
+    /* Glowing light effect */
     body::before {
       content: '';
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
       background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), transparent 50%);
       opacity: 0.4;
       pointer-events: none;
-      animation: breathe 8s ease-in-out infinite;
       z-index: 0;
+      animation: breatheMove 20s ease-in-out infinite;
     }
 
-    @keyframes breathe {
-      0%, 100% { opacity: 0.35; }
-      50% { opacity: 0.5; }
+    @keyframes breatheMove {
+      0%   { opacity: 0.35; transform: translate(0%, 0%); }
+      25%  { opacity: 0.45; transform: translate(5%, 5%); }
+      50%  { opacity: 0.5; transform: translate(10%, 10%); }
+      75%  { opacity: 0.45; transform: translate(5%, 5%); }
+      100% { opacity: 0.35; transform: translate(0%, 0%); }
     }
 
     body {
@@ -42,7 +46,7 @@
       align-items: center;
       text-align: center;
       position: relative;
-      z-index: 1; /* content above the glow */
+      z-index: 1;
     }
 
     nav {
