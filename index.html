@@ -9,8 +9,8 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: auto; /* prevents iOS rubberband */
+      overflow-x: hidden; /* prevents horizontal scroll */
+      -webkit-overflow-scrolling: auto; /* stops iOS rubberband */
     }
 
     body {
@@ -30,7 +30,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      position: fixed;   /* keeps it stuck at the top */
+      position: fixed;   /* FIXED at top */
       top: 0;
       left: 0;
       z-index: 1000;
@@ -49,7 +49,7 @@
     .content {
       max-width: 800px;
       width: 100%;
-      margin-top: 100px; /* makes space for fixed nav */
+      margin-top: 100px; /* space for fixed nav */
       padding: 1rem;
       box-sizing: border-box;
     }
@@ -90,6 +90,7 @@
   </style>
 </head>
 <body>
+  <!-- NAV OUTSIDE CONTENT -->
   <nav>
     <a href="index.html">Home</a>
     <a href="events.html">Events</a>
