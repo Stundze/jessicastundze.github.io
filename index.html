@@ -26,6 +26,8 @@
       overflow-x: hidden;
       -webkit-overflow-scrolling: auto;
       overscroll-behavior: none; /* stop rubberband */
+      display: flex;
+      justify-content: center;   /* ✅ centers horizontally */
     }
 
     nav {
@@ -56,8 +58,8 @@
       width: 100%;
       padding: 1rem;
       box-sizing: border-box;
-      margin: 100px auto 0 auto;  /* ✅ centers horizontally */
-      text-align: center;         /* ✅ keeps text centered */
+      margin-top: 100px;
+      text-align: center;
     }
 
     h1 { font-size: 3rem; margin-bottom: 1.5rem; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);}
@@ -97,13 +99,13 @@
 </head>
 <body>
   <div class="scroll-wrapper">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="events.html">Events</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
     <div class="content">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
       <h2>About the Author</h2>
       <p class="author-bio">
         Jessica Stundze is a storyteller who writes imaginative adventures for readers who love curious characters, magical worlds, and a little heart along the way. She believes in the power of books to help kids feel seen, brave, and excited to explore what makes them different.
