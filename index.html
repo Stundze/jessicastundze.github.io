@@ -1,130 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Adventures of Pebblewick by Jessica Stundze</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow-x: hidden; /* prevents horizontal scroll */
-      -webkit-overflow-scrolling: auto; /* stops iOS rubberband */
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Adventures of Pebblewick by Jessica Stundze</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;          /* prevent horizontal scroll */
+    overscroll-behavior-y: contain; /* stop mobile rubberband */
+    -webkit-overflow-scrolling: auto; /* stops iOS rubberband */
+  }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
-      color: #f0f0f5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
+    color: #f0f0f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    nav {
-      width: 100%;
-      background: rgba(0,0,0,0.4);
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      position: fixed;   /* FIXED at top */
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
+  nav {
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
 
-    nav a {
-      color: #f9d423;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
+  nav a {
+    color: #f9d423;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
 
-    nav a:hover { color: #fff; }
+  nav a:hover { color: #fff; }
 
-    .content {
-      max-width: 800px;
-      width: 100%;
-      margin-top: 100px; /* space for fixed nav */
-      padding: 1rem;
-      box-sizing: border-box;
-    }
+  .content {
+    max-width: 800px;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-top: 100px; /* space for fixed nav */
+  }
 
-    h1 { font-size: 3rem; margin-bottom: 1.5rem; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);}
-    h2 { font-size: 2rem; margin-top: 2rem; margin-bottom: 1rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.5);}
-    p.description, p.author-bio { font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.5); white-space: pre-line;}
-    .author-photo { width: 300px; max-width: 90%; height: auto; border-radius: 10px; margin: 2rem 0; box-shadow: 0 0 20px rgba(0,0,0,0.4);}
+  h1 { font-size: 3rem; margin-bottom: 1.5rem; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);}
+  h2 { font-size: 2rem; margin-top: 2rem; margin-bottom: 1rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.5);}
+  p.description, p.author-bio { font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.5); white-space: pre-line;}
+  .author-photo { width: 300px; max-width: 90%; height: auto; border-radius: 10px; margin: 2rem 0; box-shadow: 0 0 20px rgba(0,0,0,0.4);}
 
-    .book-link {
-      display: block;
-      font-size: 1.3rem;
-      color: #f9d423;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 0 10px #f9d423;
-      margin: 1rem 0;
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    }
+  .book-link {
+    display: block;
+    font-size: 1.3rem;
+    color: #f9d423;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 0 10px #f9d423;
+    margin: 1rem 0;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
 
-    .book-link:hover {
-      background: #f9d423;
-      color: #3a1c71;
-      box-shadow: 0 0 20px #f9d423;
-    }
+  .book-link:hover {
+    background: #f9d423;
+    color: #3a1c71;
+    box-shadow: 0 0 20px #f9d423;
+  }
 
-    footer { margin-top: 3rem; font-size: 0.9rem; color: #bbb;}
+  footer { margin-top: 3rem; font-size: 0.9rem; color: #bbb;}
 
-    @media (max-width:500px){
-      h1 { font-size:2.2rem;}
-      h2 { font-size:1.6rem;}
-      .author-photo { width:80%;}
-      .content { margin-top: 120px; }
-    }
-  </style>
+  @media (max-width:500px){
+    h1 { font-size:2.2rem;}
+    h2 { font-size:1.6rem;}
+    .author-photo { width:80%;}
+    .content { margin-top: 120px; }
+  }
+</style>
 </head>
 <body>
-  <!-- NAV OUTSIDE CONTENT -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <div class="content">
-    <h2>About the Author</h2>
-    <p class="author-bio">
-      Jessica Stundze is a storyteller who writes imaginative adventures for readers who love curious characters, magical worlds, and a little heart along the way. She believes in the power of books to help kids feel seen, brave, and excited to explore what makes them different.
-      Outside of writing, Jessica enjoys gardening, hiking, paddleboarding, and caring for her fish tanks — where she’s pretty sure at least one fish thinks it’s the hero of its own story. She’s always on the lookout for old books, new ideas, and quiet moments to dream up what comes next.
-    </p>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="events.html">Events</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-    <img src="cover.jpg" alt="Jessica Stundze" class="author-photo">
+<div class="content">
+  <h2>About the Author</h2>
+  <p class="author-bio">
+    Jessica Stundze is a storyteller who writes imaginative adventures for readers who love curious characters, magical worlds, and a little heart along the way. She believes in the power of books to help kids feel seen, brave, and excited to explore what makes them different.
+    Outside of writing, Jessica enjoys gardening, hiking, paddleboarding, and caring for her fish tanks — where she’s pretty sure at least one fish thinks it’s the hero of its own story. She’s always on the lookout for old books, new ideas, and quiet moments to dream up what comes next.
+  </p>
 
-    <h1>The Adventures of Pebblewick</h1>
-    <p class="description">
-      Not all stones stay planted.
-      Pebblewick was placed in a quiet garden to rest, to be still—just as he was shaped to do. But deep inside, something hummed. A call to roll, to move, to find something beyond the fence and flowers.
-      When he finally sets off, Pebblewick tumbles into a world both beautiful and broken. Shadows twist through ancient forests, long-lost magic stirs beneath the ground, and the once-harmonious hum of the land has fallen silent.
-      Alongside Thistle, a fiery-winged forest sprite, and Nib, a scrappy squirrel with a sharp tongue and a good heart, Pebblewick must follow a trail of forgotten light toward the Heart of the World.
-      Guided by whispers of the past and challenged by illusions, darkness, and doubt, Pebblewick discovers that he is more than a garden stone — he is a seed of something long buried and deeply needed.
-      A tale of bravery and strange wonders, where a curious stone leaves behind everything familiar and tumbles into a world full of secrets, shadows, and unexpected strength.
-    </p>
+  <img src="cover.jpg" alt="Jessica Stundze" class="author-photo">
 
-    <a class="book-link" href="https://www.barnesandnoble.com/w/the-adventures-of-pebblewick-jessica-stundze/1147626330?ean=9798317680879" target="_blank" rel="noopener noreferrer">
-      Order Now on Barnes & Noble
-    </a>
+  <h1>The Adventures of Pebblewick</h1>
+  <p class="description">
+    Not all stones stay planted.
+    Pebblewick was placed in a quiet garden to rest, to be still—just as he was shaped to do. But deep inside, something hummed. A call to roll, to move, to find something beyond the fence and flowers.
+    When he finally sets off, Pebblewick tumbles into a world both beautiful and broken. Shadows twist through ancient forests, long-lost magic stirs beneath the ground, and the once-harmonious hum of the land has fallen silent.
+    Alongside Thistle, a fiery-winged forest sprite, and Nib, a scrappy squirrel with a sharp tongue and a good heart, Pebblewick must follow a trail of forgotten light toward the Heart of the World.
+    Guided by whispers of the past and challenged by illusions, darkness, and doubt, Pebblewick discovers that he is more than a garden stone — he is a seed of something long buried and deeply needed.
+    A tale of bravery and strange wonders, where a curious stone leaves behind everything familiar and tumbles into a world full of secrets, shadows, and unexpected strength.
+  </p>
 
-    <a class="book-link" href="https://www.goodreads.com/book/show/237460562-the-adventures-of-pebblewick?from_search=true&from_srp=true&qid=NOsltLplEG&rank=1" target="_blank" rel="noopener noreferrer">
-      View on Goodreads
-    </a>
+  <a class="book-link" href="https://www.barnesandnoble.com/w/the-adventures-of-pebblewick-jessica-stundze/1147626330?ean=9798317680879" target="_blank" rel="noopener noreferrer">
+    Order Now on Barnes & Noble
+  </a>
 
-    <footer>&copy; 2025 Jessica Stundze</footer>
-  </div>
+  <a class="book-link" href="https://www.goodreads.com/book/show/237460562-the-adventures-of-pebblewick?from_search=true&from_srp=true&qid=NOsltLplEG&rank=1" target="_blank" rel="noopener noreferrer">
+    View on Goodreads
+  </a>
+
+  <footer>&copy; 2025 Jessica Stundze</footer>
+</div>
+
 </body>
 </html>
