@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Adventures of Pebblewick by Jessica Stundze</title>
   <style>
-    /* Reset and base */
     html, body {
       margin: 0;
       padding: 0;
@@ -39,10 +38,10 @@
 
     nav a:hover { color: #fff; }
 
-    /* Content styling */
+    /* Content */
     .content {
       max-width: 800px;
-      margin: 120px auto 0 auto; /* center horizontally and leave space for nav */
+      margin: 100px auto 0 auto; /* leaves space for fixed nav */
       padding: 1rem;
       text-align: center;
     }
@@ -104,17 +103,17 @@
       color: #bbb;
     }
 
-    /* Mobile adjustments */
     @media (max-width:500px){
       h1 { font-size:2.2rem; }
       h2 { font-size:1.6rem; }
       .author-photo { width:80%; }
-      .content { margin-top: 140px; } /* a bit more for mobile nav height */
+      .content { margin-top: 140px; } /* more space for mobile nav */
     }
   </style>
 </head>
 <body>
-  <!-- Fixed Navigation -->
+
+  <!-- Fixed Navigation outside content -->
   <nav>
     <a href="index.html">Home</a>
     <a href="events.html">Events</a>
