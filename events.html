@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Events | Jessica Stundze</title>
   <style>
-    /* Full height, smooth gradient, and no default scroll */
     html, body {
       height: 100%;
       margin: 0;
@@ -14,38 +13,30 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #f0f0f5;
       position: relative;
-      background: linear-gradient(135deg, #3a1c71, #472b7f, #5b3a8c, #2a5298);
-      background-size: 400% 400%;
-      animation: gradientShift 30s ease infinite;
+      background: #3a1c71; /* fallback */
     }
 
-    /* Smooth gradient animation */
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Radial breathing glow */
+    /* Smooth radial gradient background */
     body::before {
       content: '';
       position: fixed;
-      top: -25%;
-      left: -25%;
-      width: 150%;
-      height: 150%;
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 60%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
-      opacity: 0.4;
       z-index: 0;
-      animation: breatheMove 20s ease-in-out infinite;
+      background: radial-gradient(circle at 25% 25%, rgba(58,28,113,0.5), transparent 60%),
+                  radial-gradient(circle at 75% 75%, rgba(91,58,140,0.4), transparent 60%),
+                  radial-gradient(circle at 50% 50%, rgba(42,82,152,0.3), transparent 80%);
+      animation: breatheMove 25s ease-in-out infinite;
     }
 
     @keyframes breatheMove {
-      0%, 100% { opacity: 0.35; transform: translate(0%, 0%); }
-      25% { opacity: 0.45; transform: translate(5%, 5%); }
-      50% { opacity: 0.5; transform: translate(10%, 10%); }
-      75% { opacity: 0.45; transform: translate(5%, 5%); }
+      0%, 100% { transform: translate(0,0); opacity: 0.4; }
+      25% { transform: translate(3%, 3%); opacity: 0.45; }
+      50% { transform: translate(6%, 6%); opacity: 0.5; }
+      75% { transform: translate(3%, 3%); opacity: 0.45; }
     }
 
     /* Scrollable wrapper */
@@ -145,7 +136,6 @@
 </head>
 <body>
   <div class="scroll-wrapper">
-    <!-- Navigation bar -->
     <nav>
       <a href="index.html">Home</a>
       <a href="events.html">Events</a>
@@ -171,4 +161,3 @@
   </div>
 </body>
 </html>
-
