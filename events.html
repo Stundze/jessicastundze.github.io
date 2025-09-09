@@ -5,63 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Events | Jessica Stundze</title>
   <style>
-    /* Full height and prevent default scroll on body */
+    /* Full height, smooth gradient, and no default scroll */
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
-      overflow: hidden; /* Disable default scroll */
+      overflow: hidden;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #f0f0f5;
       position: relative;
+      background: linear-gradient(135deg, #3a1c71, #472b7f, #5b3a8c, #2a5298);
+      background-size: 400% 400%;
+      animation: gradientShift 30s ease infinite;
     }
 
-    /* Background glow and gradient */
+    /* Smooth gradient animation */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Radial breathing glow */
     body::before {
       content: '';
       position: fixed;
-      top: -20%;
-      left: -20%;
-      width: 140%;
-      height: 140%;
-      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), transparent 50%);
-      z-index: 0;
-      opacity: 0.4;
+      top: -25%;
+      left: -25%;
+      width: 150%;
+      height: 150%;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 60%);
       pointer-events: none;
+      opacity: 0.4;
+      z-index: 0;
       animation: breatheMove 20s ease-in-out infinite;
     }
 
     @keyframes breatheMove {
-      0%   { opacity: 0.35; transform: translate(0%, 0%); }
-      25%  { opacity: 0.45; transform: translate(5%, 5%); }
-      50%  { opacity: 0.5; transform: translate(10%, 10%); }
-      75%  { opacity: 0.45; transform: translate(5%, 5%); }
-      100% { opacity: 0.35; transform: translate(0%, 0%); }
+      0%, 100% { opacity: 0.35; transform: translate(0%, 0%); }
+      25% { opacity: 0.45; transform: translate(5%, 5%); }
+      50% { opacity: 0.5; transform: translate(10%, 10%); }
+      75% { opacity: 0.45; transform: translate(5%, 5%); }
     }
 
+    /* Scrollable wrapper */
     .scroll-wrapper {
       height: 100%;
       overflow-y: scroll;
       overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; /* Firefox */
+      scrollbar-width: none;
       position: relative;
       z-index: 1;
-      background: linear-gradient(135deg, #3a1c71 0%, #5b3a8c 40%, #2a5298 100%);
     }
 
     .scroll-wrapper::-webkit-scrollbar {
       display: none;
     }
 
-    /* Layout */
-    body, .scroll-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
+    /* Navigation bar */
     nav {
       width: 100%;
       background: rgba(0,0,0,0.4);
@@ -90,7 +92,7 @@
       max-width: 800px;
       width: 100%;
       padding: 1rem;
-      margin-top: 2rem; /* avoid nav overlap */
+      margin-top: 2rem;
       text-align: center;
     }
 
@@ -169,3 +171,4 @@
   </div>
 </body>
 </html>
+
