@@ -1,195 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Events | Jessica Stundze</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #f0f0f5;
-      background: #3a1c71; /* fallback */
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events | Jessica Stundze</title>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f5;
+}
 
-    /* Smooth animated gradient */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-      pointer-events: none;
-      background: linear-gradient(135deg, #3a1c71, #472b7f, #5b3a8c, #2a5298);
-      background-size: 400% 400%;
-      animation: gradientShift 40s ease infinite;
-    }
+/* Fixed smooth animated background */
+.background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  background: linear-gradient(135deg, #3a1c71, #472b7f, #5b3a8c, #2a5298);
+  background-size: 400% 400%;
+  animation: gradientShift 40s ease infinite;
+}
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-    /* Noise overlay to remove banding */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=') repeat;
-      opacity: 0.03;
-      z-index: 1;
-      pointer-events: none;
-    }
+/* Optional subtle noise overlay */
+.background::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=') repeat;
+  opacity: 0.03;
+}
 
-    /* Breathing radial glow */
-    .glow {
-      position: fixed;
-      top: -25%;
-      left: -25%;
-      width: 150%;
-      height: 150%;
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-      animation: breatheMove 25s ease-in-out infinite;
-    }
+/* Scrollable content */
+.scroll-wrapper {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
 
-    @keyframes breatheMove {
-      0%, 100% { transform: translate(0,0); opacity: 0.4; }
-      25% { transform: translate(3%,3%); opacity: 0.45; }
-      50% { transform: translate(6%,6%); opacity: 0.5; }
-      75% { transform: translate(3%,3%); opacity: 0.45; }
-    }
+/* Center content inside */
+.content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
 
-    /* Scrollable wrapper */
-    .scroll-wrapper {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+/* Sticky navigation */
+nav {
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
 
-    .scroll-wrapper::-webkit-scrollbar { display: none; }
-    .scroll-wrapper { scrollbar-width: none; }
+nav a {
+  color: #f9d423;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
 
-    /* Navigation bar */
-    nav {
-      width: 100%;
-      background: rgba(0,0,0,0.4);
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 3;
-    }
+nav a:hover { color: #fff; }
 
-    nav a {
-      color: #f9d423;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
+/* Event cards */
+.event {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  text-align: left;
+}
 
-    nav a:hover { color: #fff; }
+.event h2 {
+  font-size: 1.8rem;
+  color: #f9d423;
+  margin-bottom: 0.5rem;
+}
 
-    /* Content */
-    .content {
-      max-width: 800px;
-      width: 100%;
-      padding: 1rem;
-      margin-top: 2rem;
-      text-align: center;
-    }
+.register-link {
+  font-size: 1.2rem;
+  color: #f9d423;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 10px #f9d423;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  display: inline-block;
+  margin-top: 1rem;
+}
 
-    .event {
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      text-align: left;
-    }
+.register-link:hover {
+  background: #f9d423;
+  color: #3a1c71;
+  box-shadow: 0 0 20px #f9d423;
+}
 
-    .event h2 {
-      font-size: 1.8rem;
-      color: #f9d423;
-      margin-bottom: 0.5rem;
-    }
+footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #bbb;
+}
 
-    .register-link {
-      font-size: 1.2rem;
-      color: #f9d423;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 0 10px #f9d423;
-      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    .register-link:hover {
-      background: #f9d423;
-      color: #3a1c71;
-      box-shadow: 0 0 20px #f9d423;
-    }
-
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-
-    @media (max-width: 500px) {
-      .event h2 { font-size: 1.5rem; }
-      .register-link { font-size: 1rem; }
-    }
-  </style>
+@media (max-width: 500px) {
+  .event h2 { font-size: 1.5rem; }
+  .register-link { font-size: 1rem; }
+}
+</style>
 </head>
 <body>
-  <!-- Breathing glow overlay -->
-  <div class="glow"></div>
 
-  <div class="scroll-wrapper">
-    <!-- Navigation -->
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="events.html">Events</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+<!-- Fixed smooth background -->
+<div class="background"></div>
 
-    <div class="content">
-      <h1>Upcoming Events</h1>
+<div class="scroll-wrapper">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-      <div class="event">
-        <h2>Children's Book Reading with Jessica Stundze</h2>
-        <p>Date: Sunday, September 28 · 11am - 12pm PDT</p>
-        <p>Enjoy a live reading of <em>The Adventures of Pebblewick</em>.</p>
-        <a class="register-link" href="https://www.eventbrite.com/e/childrens-book-reading-with-author-jessica-stundze-tickets-1626751771339?aff=ebdsoporgprofile" target="_blank" rel="noopener noreferrer">
-          Register on Eventbrite
-        </a>
-      </div>
+  <div class="content">
+    <h1>Upcoming Events</h1>
 
-      <footer>
-        &copy; 2025 Jessica Stundze
-      </footer>
+    <div class="event">
+      <h2>Children's Book Reading with Jessica Stundze</h2>
+      <p>Date: Sunday, September 28 · 11am - 12pm PDT</p>
+      <p>Enjoy a live reading of <em>The Adventures of Pebblewick</em>.</p>
+      <a class="register-link" href="https://www.eventbrite.com/e/childrens-book-reading-with-author-jessica-stundze-tickets-1626751771339?aff=ebdsoporgprofile" target="_blank" rel="noopener noreferrer">
+        Register on Eventbrite
+      </a>
     </div>
+
+    <footer>
+      &copy; 2025 Jessica Stundze
+    </footer>
   </div>
+</div>
 </body>
 </html>
