@@ -9,21 +9,17 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      overflow: hidden; /* Prevent rubberband */
+      overflow: hidden; /* Prevent rubberband on body */
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
       color: #f0f0f5;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
     }
 
     /* Scrollable container */
     .scroll-wrapper {
-      flex: 1;
       width: 100%;
       height: 100%;
       overflow-y: auto;
@@ -60,9 +56,8 @@
       width: 100%;
       padding: 1rem;
       box-sizing: border-box;
-      margin: 0 auto;         /* ✅ center content on desktop */
-      text-align: center;     /* ✅ keep text centered */
-      margin-top: 100px;
+      margin: 100px auto 0 auto;  /* ✅ centers horizontally */
+      text-align: center;         /* ✅ keeps text centered */
     }
 
     h1 { font-size: 3rem; margin-bottom: 1.5rem; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);}
@@ -140,3 +135,4 @@
   </div>
 </body>
 </html>
+
