@@ -9,36 +9,27 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      overflow: hidden; /* prevent rubberbanding */
+      overflow: hidden; /* Prevent rubberband */
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
       color: #f0f0f5;
-      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
 
-    /* Scroll wrapper */
+    /* Scrollable container */
     .scroll-wrapper {
-      height: 100%;
+      flex: 1;
       width: 100%;
+      height: 100%;
       overflow-y: auto;
       overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding-top: 80px; /* space for fixed nav */
-      padding-bottom: 100px;
-      box-sizing: border-box;
-
-      /* ✅ Center content again */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .scroll-wrapper::-webkit-scrollbar {
-      display: none;
+      -webkit-overflow-scrolling: auto;
+      overscroll-behavior: none; /* stop rubberband */
     }
 
     nav {
@@ -52,7 +43,6 @@
       top: 0;
       left: 0;
       z-index: 1000;
-      box-sizing: border-box;
     }
 
     nav a {
@@ -70,6 +60,9 @@
       width: 100%;
       padding: 1rem;
       box-sizing: border-box;
+      margin: 0 auto;         /* ✅ center content on desktop */
+      text-align: center;     /* ✅ keep text centered */
+      margin-top: 100px;
     }
 
     h1 { font-size: 3rem; margin-bottom: 1.5rem; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);}
@@ -103,6 +96,7 @@
       h1 { font-size:2.2rem;}
       h2 { font-size:1.6rem;}
       .author-photo { width:80%;}
+      .content { margin-top: 120px;}
     }
   </style>
 </head>
