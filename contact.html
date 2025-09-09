@@ -14,17 +14,22 @@ html, body {
   color: #f0f0f5;
 }
 
-/* Fixed smooth gradient background */
+/* Smooth animated gradient background */
 .background {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
-  background: linear-gradient(135deg, #3a1c71 0%, #472b7f 33%, #5b3a8c 66%, #2a5298 100%);
+  background: linear-gradient(135deg,
+      #3a1c71 0%,
+      #45297b 25%,
+      #5b3a8c 50%,
+      #4a3f92 75%,
+      #2a5298 100%);
   background-size: 400% 400%;
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   animation: gradientShift 50s ease infinite;
 }
 
@@ -34,7 +39,7 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* Subtle noise overlay */
+/* Subtle noise overlay to smooth gradient */
 .background::after {
   content: '';
   position: absolute;
@@ -46,7 +51,27 @@ html, body {
   pointer-events: none;
 }
 
-/* Scrollable wrapper */
+/* Breathing radial glow */
+.glow {
+  position: fixed;
+  top: -25%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  animation: breatheMove 25s ease-in-out infinite;
+}
+
+@keyframes breatheMove {
+  0%, 100% { transform: translate(0,0); opacity: 0.35; }
+  25% { transform: translate(3%,3%); opacity: 0.45; }
+  50% { transform: translate(6%,6%); opacity: 0.5; }
+  75% { transform: translate(3%,3%); opacity: 0.45; }
+}
+
+/* Scrollable content */
 .scroll-wrapper {
   position: relative;
   z-index: 1;
@@ -154,6 +179,7 @@ footer {
 <body>
 
 <div class="background"></div>
+<div class="glow"></div>
 
 <div class="scroll-wrapper">
   <nav>
