@@ -16,37 +16,39 @@
       text-align: center;
     }
 
+    /* BULLETPROOF NAV */
     nav {
-      position: fixed !important; /* lock to viewport */
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.6);
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      z-index: 9999; /* stays above all content */
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      background: rgba(0,0,0,0.85) !important;
+      padding: 1rem !important;
+      display: flex !important;
+      justify-content: center !important;
+      gap: 2rem !important;
+      z-index: 99999 !important;
+      transform: none !important;
     }
 
     nav a {
-      color: #f9d423;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: color 0.3s;
+      color: #f9d423 !important;
+      text-decoration: none !important;
+      font-weight: bold !important;
+      font-size: 1.2rem !important;
+      transition: color 0.3s !important;
     }
 
     nav a:hover {
-      color: #fff;
+      color: #fff !important;
     }
 
     .content {
       max-width: 800px;
       width: 100%;
       padding: 1rem;
-      margin: 90px auto 0; /* space so content isn’t hidden under nav */
+      margin: 120px auto 0 !important; /* space below fixed nav */
       box-sizing: border-box;
     }
 
@@ -111,7 +113,7 @@
       h1 { font-size: 2.2rem; }
       h2 { font-size: 1.6rem; }
       .author-photo { width: 80%; }
-      .content { margin-top: 110px; } /* more room on small screens */
+      .content { margin-top: 140px !important; } /* extra spacing on small screens */
     }
   </style>
 </head>
