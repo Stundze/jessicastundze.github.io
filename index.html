@@ -13,23 +13,21 @@
       color: #f0f0f5;
       height: 100%;
       overscroll-behavior: contain; /* disables rubberbanding on mobile */
-    }
-
-    body {
-      text-align: center; /* removed flex layout so nav stays fixed */
+      text-align: center;
     }
 
     nav {
+      position: fixed !important; /* lock to viewport */
+      top: 0;
+      left: 0;
+      right: 0;
       width: 100%;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.6);
       padding: 1rem;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
+      z-index: 9999; /* stays above all content */
     }
 
     nav a {
@@ -48,7 +46,7 @@
       max-width: 800px;
       width: 100%;
       padding: 1rem;
-      margin: 100px auto 0; /* offset for fixed nav */
+      margin: 90px auto 0; /* space so content isn’t hidden under nav */
       box-sizing: border-box;
     }
 
@@ -113,7 +111,7 @@
       h1 { font-size: 2.2rem; }
       h2 { font-size: 1.6rem; }
       .author-photo { width: 80%; }
-      .content { margin-top: 120px; } /* extra spacing on mobile */
+      .content { margin-top: 110px; } /* more room on small screens */
     }
   </style>
 </head>
