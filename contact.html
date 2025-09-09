@@ -12,18 +12,20 @@ html, body {
   overflow: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #f0f0f5;
-  background: #3a1c71; /* fallback */
 }
 
-/* Fixed smooth animated gradient */
+/* Fixed smooth gradient background */
 .background {
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   z-index: 0;
-  background: linear-gradient(135deg, #3a1c71, #472b7f, #5b3a8c, #2a5298);
+  background: linear-gradient(135deg, #3a1c71 0%, #472b7f 33%, #5b3a8c 66%, #2a5298 100%);
   background-size: 400% 400%;
-  animation: gradientShift 40s ease infinite;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: gradientShift 50s ease infinite;
 }
 
 @keyframes gradientShift {
@@ -32,37 +34,19 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* Noise overlay to smooth gradient */
+/* Subtle noise overlay */
 .background::after {
   content: '';
   position: absolute;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=') repeat;
   opacity: 0.03;
-}
-
-/* Breathing radial glow */
-.glow {
-  position: fixed;
-  top: -25%;
-  left: -25%;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 60%);
   pointer-events: none;
-  z-index: 0;
-  animation: breatheMove 25s ease-in-out infinite;
 }
 
-@keyframes breatheMove {
-  0%, 100% { transform: translate(0,0); opacity: 0.4; }
-  25% { transform: translate(3%,3%); opacity: 0.45; }
-  50% { transform: translate(6%,6%); opacity: 0.5; }
-  75% { transform: translate(3%,3%); opacity: 0.45; }
-}
-
-/* Scrollable content */
+/* Scrollable wrapper */
 .scroll-wrapper {
   position: relative;
   z-index: 1;
@@ -95,7 +79,7 @@ nav a {
 
 nav a:hover { color: #fff; }
 
-/* Content styling */
+/* Content */
 .content {
   max-width: 800px;
   margin: 2rem auto;
@@ -170,7 +154,6 @@ footer {
 <body>
 
 <div class="background"></div>
-<div class="glow"></div>
 
 <div class="scroll-wrapper">
   <nav>
