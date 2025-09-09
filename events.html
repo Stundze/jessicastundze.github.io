@@ -4,42 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Events | Jessica Stundze</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* Make body and html full height and prevent default scroll */
+    /* Full height and prevent default scroll on body */
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
-      overflow: hidden; /* Disable body scroll */
+      overflow: hidden; /* Disable default scroll */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f0f0f5;
+      position: relative;
     }
 
-    /* Scrollable wrapper */
+    /* Background glow and gradient */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), transparent 50%);
+      z-index: 0;
+      opacity: 0.4;
+      pointer-events: none;
+      animation: breatheMove 20s ease-in-out infinite;
+    }
+
+    @keyframes breatheMove {
+      0%   { opacity: 0.35; transform: translate(0%, 0%); }
+      25%  { opacity: 0.45; transform: translate(5%, 5%); }
+      50%  { opacity: 0.5; transform: translate(10%, 10%); }
+      75%  { opacity: 0.45; transform: translate(5%, 5%); }
+      100% { opacity: 0.35; transform: translate(0%, 0%); }
+    }
+
     .scroll-wrapper {
       height: 100%;
-      overflow-y: scroll;   /* allow scrolling */
-      overflow-x: hidden;   /* prevent horizontal scroll */
-      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-
-      /* Hide scrollbar on desktop */
+      overflow-y: scroll;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
       scrollbar-width: none; /* Firefox */
-    }
-    .scroll-wrapper::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Edge */
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, #3a1c71 0%, #5b3a8c 40%, #2a5298 100%);
     }
 
-    /* Body and layout inside wrapper */
+    .scroll-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Layout */
     body, .scroll-wrapper {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #3a1c71, #5b3a8c, #1e3c72, #2a5298);
-      color: #f0f0f5;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
 
-    /* Navigation bar */
     nav {
       width: 100%;
       background: rgba(0,0,0,0.4);
@@ -49,7 +71,7 @@
       gap: 2rem;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 2;
     }
 
     nav a {
@@ -67,12 +89,11 @@
     .content {
       max-width: 800px;
       width: 100%;
-      margin-top: 2rem; /* to avoid nav overlap */
-      text-align: center;
       padding: 1rem;
+      margin-top: 2rem; /* avoid nav overlap */
+      text-align: center;
     }
 
-    /* Event card */
     .event {
       background: rgba(255,255,255,0.1);
       border-radius: 10px;
@@ -97,7 +118,7 @@
       border-radius: 6px;
       background: rgba(255,255,255,0.15);
       box-shadow: 0 0 10px #f9d423;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
       display: inline-block;
       margin-top: 1rem;
     }
@@ -114,7 +135,6 @@
       color: #bbb;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 500px) {
       .event h2 { font-size: 1.5rem; }
       .register-link { font-size: 1rem; }
